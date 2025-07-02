@@ -6,8 +6,10 @@ import DetailScreen from "./src/screens/DetailScreen";
 const RootStack = createNativeStackNavigator({
   screens: {
     Search: SearchScreen,
-    Detail: DetailScreen
+    Detail: DetailScreen,
   },
+  initialRouteName: "Search",
+  screenOptions: { title: "Business Search" },
 });
 
 const Navigation = createStaticNavigation(RootStack);
