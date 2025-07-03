@@ -1,12 +1,12 @@
 import { createStaticNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SearchScreen from "./src/screens/SearchScreen";
-import DetailScreen from "./src/screens/DetailScreen";
+import ResultShowScreen from "./src/screens/ResultShowScreen";
 
 const RootStack = createNativeStackNavigator({
   screens: {
     Search: SearchScreen,
-    Detail: DetailScreen,
+    ResultShow: ResultShowScreen,
   },
   initialRouteName: "Search",
   screenOptions: { title: "Business Search" },

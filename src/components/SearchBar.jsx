@@ -1,5 +1,4 @@
-import { View, Text, StyleSheet, TextInput } from "react-native";
-import React from "react";
+import { View, StyleSheet, TextInput } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
 const CustomSearchBar = ({ onSubmit }) => {
@@ -9,15 +8,11 @@ const CustomSearchBar = ({ onSubmit }) => {
       <TextInput
         placeholder="search"
         style={style.inputStyle}
-        // value={value}
         autoCapitalize="none"
         autoCorrect={false}
-        // onChangeText={(text) => {
-        //   onChangeValue(text);
-        // }}
         onEndEditing={(text) => {
           onSubmit(text);
-        }}s
+        }}
       />
     </View>
   );
@@ -28,8 +23,7 @@ const style = StyleSheet.create({
     backgroundColor: "#F0EEEE",
     height: 50,
     borderRadius: 5,
-    marginTop: 15,
-    marginHorizontal: 15,
+    margin: 15,
     flexDirection: "row",
   },
   inputStyle: {

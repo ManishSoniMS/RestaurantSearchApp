@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import CustomSearchBar from "../components/SearchBar";
 import useRestaurants from "../hooks/useRestaurants";
 import ResultList from "../components/ResultList";
@@ -11,17 +11,22 @@ const SearchScreen = () => {
       return data.price === price;
     });
   };
+
   return (
-    <View>
+    <View style={styles.container}>
       <CustomSearchBar onSubmit={(val) => searchApi({ searchQuery: val })} />
-
       {errorMessage ? <Text>{errorMessage}</Text> : null}
-
-      <ResultList title="Cost Effective" data={filterResultByPrice("$")} />
-      <ResultList title="Bit Pricier" data={filterResultByPrice("$$")} />
-      <ResultList title="Big Spender" data={filterResultByPrice("$$$")} />
+      <ScrollView>
+        <ResultList title="Cost Effective" data={filterResultByPrice("$")} />
+        <ResultList title="Bit Pricier" data={filterResultByPrice("$$")} />
+        <ResultList title="Big Spender" data={filterResultByPrice("$$$")} />
+      </ScrollView>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: "white" },
+});
 
 export default SearchScreen;
